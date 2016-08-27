@@ -18,6 +18,7 @@ class MainViewController: NSViewController {
     @IBOutlet weak var statusLabel: NSTextField!
 
     var outgoingConnectionManager : OutgoingConnectionManager?
+    var incomingConnectionManager : IncomingConnectionManager?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,6 +59,17 @@ class MainViewController: NSViewController {
         }
 
         outgoingConnectionManager?.stopAdvertising()
+        incomingConnectionManager?.stopBrowsing()
+
+    }
+
+    @IBAction func onReceiveButtonClicked(sender: NSButton) {
+        guard passPhraseTextField.stringValue != "" else {
+            statusLabel.stringValue = "You need a passPhrase to continue"
+            return
+        }
+
+        incomingConnectionManager = IncomingConnectionManager(passPhrase: passPhraseTextField.stringValue)
     }
 }
 

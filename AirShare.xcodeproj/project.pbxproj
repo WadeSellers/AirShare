@@ -11,7 +11,8 @@
 		1813546B1D712D06000BB655 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1813546A1D712D06000BB655 /* MainViewController.swift */; };
 		1813546D1D712D06000BB655 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1813546C1D712D06000BB655 /* Assets.xcassets */; };
 		181354701D712D06000BB655 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1813546E1D712D06000BB655 /* Main.storyboard */; };
-		1813547A1D71630A000BB655 /* ConnectionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181354791D71630A000BB655 /* ConnectionManager.swift */; };
+		1813547A1D71630A000BB655 /* OutgoingConnectionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181354791D71630A000BB655 /* OutgoingConnectionManager.swift */; };
+		1813547C1D71F197000BB655 /* IncomingConnectionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1813547B1D71F197000BB655 /* IncomingConnectionManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,7 +22,8 @@
 		1813546C1D712D06000BB655 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1813546F1D712D06000BB655 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		181354711D712D06000BB655 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		181354791D71630A000BB655 /* ConnectionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectionManager.swift; sourceTree = "<group>"; };
+		181354791D71630A000BB655 /* OutgoingConnectionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OutgoingConnectionManager.swift; sourceTree = "<group>"; };
+		1813547B1D71F197000BB655 /* IncomingConnectionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IncomingConnectionManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -38,7 +40,7 @@
 		1813545C1D712D06000BB655 = {
 			isa = PBXGroup;
 			children = (
-				181354791D71630A000BB655 /* ConnectionManager.swift */,
+				1813547D1D71F19F000BB655 /* Connection Managers */,
 				181354671D712D06000BB655 /* AirShare */,
 				181354661D712D06000BB655 /* Products */,
 			);
@@ -62,6 +64,15 @@
 				181354711D712D06000BB655 /* Info.plist */,
 			);
 			path = AirShare;
+			sourceTree = "<group>";
+		};
+		1813547D1D71F19F000BB655 /* Connection Managers */ = {
+			isa = PBXGroup;
+			children = (
+				181354791D71630A000BB655 /* OutgoingConnectionManager.swift */,
+				1813547B1D71F197000BB655 /* IncomingConnectionManager.swift */,
+			);
+			name = "Connection Managers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -135,7 +146,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				1813546B1D712D06000BB655 /* MainViewController.swift in Sources */,
-				1813547A1D71630A000BB655 /* ConnectionManager.swift in Sources */,
+				1813547C1D71F197000BB655 /* IncomingConnectionManager.swift in Sources */,
+				1813547A1D71630A000BB655 /* OutgoingConnectionManager.swift in Sources */,
 				181354691D712D06000BB655 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
