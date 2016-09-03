@@ -13,17 +13,15 @@ class MainViewController: NSViewController {
     @IBOutlet weak var passPhraseTextField: NSTextField!
     @IBOutlet weak var addFileButton: NSButton!
     @IBOutlet weak var stopButton: NSButton!
-    @IBOutlet weak var sendButton: NSButton!
-    @IBOutlet weak var receiveButton: NSButton!
+    @IBOutlet weak var shareButton: NSButton!
     @IBOutlet weak var statusLabel: NSTextField!
 
-    var outgoingConnectionManager : OutgoingConnectionManager?
-    var incomingConnectionManager : IncomingConnectionManager?
+    var connectionManager : ConnectionManager?
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-
+        connectionManager = ConnectionManager()
     }
 
     override var representedObject: AnyObject? {
@@ -44,33 +42,24 @@ class MainViewController: NSViewController {
         }
     }
 
-    @IBAction func onSendButtonClicked(sender: NSButton) {
+    @IBAction func onShareButtonClicked(sender: NSButton) {
         guard passPhraseTextField.stringValue != "" else {
             statusLabel.stringValue = "You need a passPhrase to continue"
             return
         }
 
-        outgoingConnectionManager = OutgoingConnectionManager(passPhrase: passPhraseTextField.stringValue)
+        connectionManager?.startServices()
     }
 
 
     @IBAction func onStopButtonClicked(sender: NSButton) {
-        guard (outgoingConnectionManager != nil) else {
+        guard (connectionManager != nil) else {
             return
         }
 
-        outgoingConnectionManager?.stopAdvertising()
-        incomingConnectionManager?.stopBrowsing()
+        connectionManager?.stopServices()
 
     }
 
-    @IBAction func onReceiveButtonClicked(sender: NSButton) {
-        guard passPhraseTextField.stringValue != "" else {
-            statusLabel.stringValue = "You need a passPhrase to continue"
-            return
-        }
-
-        incomingConnectionManager = IncomingConnectionManager(passPhrase: passPhraseTextField.stringValue)
-    }
 }
 
