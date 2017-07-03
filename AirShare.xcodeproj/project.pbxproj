@@ -12,6 +12,8 @@
 		1813546D1D712D06000BB655 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1813546C1D712D06000BB655 /* Assets.xcassets */; };
 		181354701D712D06000BB655 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1813546E1D712D06000BB655 /* Main.storyboard */; };
 		1813547A1D71630A000BB655 /* ConnectionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181354791D71630A000BB655 /* ConnectionManager.swift */; };
+		1817B6431E2A90370091EAFA /* FileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1817B6421E2A90370091EAFA /* FileManager.swift */; };
+		18792F1F1E4CEC4D006EEA35 /* MPCManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18792F1E1E4CEC4D006EEA35 /* MPCManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		1813546F1D712D06000BB655 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		181354711D712D06000BB655 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		181354791D71630A000BB655 /* ConnectionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectionManager.swift; sourceTree = "<group>"; };
+		1817B6421E2A90370091EAFA /* FileManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileManager.swift; sourceTree = "<group>"; };
+		18792F1E1E4CEC4D006EEA35 /* MPCManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MPCManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -38,7 +42,7 @@
 		1813545C1D712D06000BB655 = {
 			isa = PBXGroup;
 			children = (
-				181354791D71630A000BB655 /* ConnectionManager.swift */,
+				1813547D1D71F19F000BB655 /* Connection Managers */,
 				181354671D712D06000BB655 /* AirShare */,
 				181354661D712D06000BB655 /* Products */,
 			);
@@ -62,6 +66,16 @@
 				181354711D712D06000BB655 /* Info.plist */,
 			);
 			path = AirShare;
+			sourceTree = "<group>";
+		};
+		1813547D1D71F19F000BB655 /* Connection Managers */ = {
+			isa = PBXGroup;
+			children = (
+				181354791D71630A000BB655 /* ConnectionManager.swift */,
+				1817B6421E2A90370091EAFA /* FileManager.swift */,
+				18792F1E1E4CEC4D006EEA35 /* MPCManager.swift */,
+			);
+			name = "Connection Managers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -91,11 +105,12 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0730;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = InsertCoinProductions;
 				TargetAttributes = {
 					181354641D712D06000BB655 = {
 						CreatedOnToolsVersion = 7.3.1;
+						LastSwiftMigration = 0800;
 					};
 				};
 			};
@@ -136,7 +151,9 @@
 			files = (
 				1813546B1D712D06000BB655 /* MainViewController.swift in Sources */,
 				1813547A1D71630A000BB655 /* ConnectionManager.swift in Sources */,
+				18792F1F1E4CEC4D006EEA35 /* MPCManager.swift in Sources */,
 				181354691D712D06000BB655 /* AppDelegate.swift in Sources */,
+				1817B6431E2A90370091EAFA /* FileManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -168,8 +185,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "-";
@@ -213,8 +232,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "-";
@@ -233,6 +254,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 			};
 			name = Release;
 		};
@@ -245,6 +267,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.InsertCoinProductions.AirShare;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -257,6 +280,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.InsertCoinProductions.AirShare;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};

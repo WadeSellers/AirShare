@@ -676,8 +676,8 @@
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="zZW-rp-gHI">
                                 <rect key="frame" x="175" y="137" width="130" height="34"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="34" id="ics-m0-UhZ"/>
-                                    <constraint firstAttribute="width" constant="126" id="sRw-Hw-UEt"/>
+                                    <constraint firstAttribute="width" constant="126" id="2j5-5n-uY6"/>
+                                    <constraint firstAttribute="height" constant="34" id="EHc-dP-qJb"/>
                                 </constraints>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="AirShare" id="Cut-dP-VAo">
                                     <font key="font" metaFont="system" size="24"/>
@@ -686,10 +686,10 @@
                                 </textFieldCell>
                             </textField>
                             <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Zs2-zp-2yO">
-                                <rect key="frame" x="140" y="107" width="201" height="22"/>
+                                <rect key="frame" x="108" y="78" width="264" height="22"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="201" id="eba-dF-ytu"/>
-                                    <constraint firstAttribute="height" constant="22" id="tO8-US-vzg"/>
+                                    <constraint firstAttribute="height" constant="22" id="MDH-t1-rHC"/>
+                                    <constraint firstAttribute="width" constant="264" id="i8h-dt-hZh"/>
                                 </constraints>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="center" placeholderString="enter passphrase" drawsBackground="YES" id="49F-w8-K0G">
                                     <font key="font" metaFont="system"/>
@@ -698,12 +698,12 @@
                                 </textFieldCell>
                             </textField>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="cGu-La-dgN">
-                                <rect key="frame" x="102" y="71" width="276" height="32"/>
+                                <rect key="frame" x="102" y="101" width="276" height="32"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="7mN-Dw-khe"/>
-                                    <constraint firstAttribute="width" constant="264" id="esv-8c-kyt"/>
+                                    <constraint firstAttribute="height" constant="21" id="Ll8-gu-7PW"/>
+                                    <constraint firstAttribute="width" constant="264" id="NLg-Uh-QAD"/>
                                 </constraints>
-                                <buttonCell key="cell" type="push" title="Tap to select file/folder to send" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="n6z-Mw-eSo">
+                                <buttonCell key="cell" type="push" title="Add file/folder IF you are initial sender" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="n6z-Mw-eSo">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
@@ -711,8 +711,12 @@
                                     <action selector="onAddFileButtonClicked:" target="XfG-lQ-9wD" id="vtz-25-S8G"/>
                                 </connections>
                             </button>
-                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ufr-H1-feE">
-                                <rect key="frame" x="108" y="38" width="69" height="32"/>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ufr-H1-feE">
+                                <rect key="frame" x="102" y="42" width="124" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="Ewy-uF-yGJ"/>
+                                    <constraint firstAttribute="width" constant="112" id="rtC-9C-4OX"/>
+                                </constraints>
                                 <buttonCell key="cell" type="push" title="Stop" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Ax1-on-2Zj">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
@@ -721,25 +725,26 @@
                                     <action selector="onStopButtonClicked:" target="XfG-lQ-9wD" id="2Or-AL-fmf"/>
                                 </connections>
                             </button>
-                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Q8u-bP-fO6">
-                                <rect key="frame" x="205" y="38" width="71" height="32"/>
-                                <buttonCell key="cell" type="push" title="Send" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="BN8-qD-sEe">
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Q8u-bP-fO6">
+                                <rect key="frame" x="254" y="42" width="124" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="bGJ-ad-OFG"/>
+                                    <constraint firstAttribute="width" constant="112" id="fN6-h2-JA7"/>
+                                </constraints>
+                                <buttonCell key="cell" type="push" title="Share" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="BN8-qD-sEe">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
                                 <connections>
-                                    <action selector="onSendButtonClicked:" target="XfG-lQ-9wD" id="Nh6-kl-aD6"/>
+                                    <action selector="onShareButtonClicked:" target="XfG-lQ-9wD" id="bQX-SZ-3vF"/>
                                 </connections>
                             </button>
-                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7M5-jw-Ekd">
-                                <rect key="frame" x="294" y="38" width="88" height="32"/>
-                                <buttonCell key="cell" type="push" title="Receive" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="IKz-dt-17e">
-                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                </buttonCell>
-                            </button>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kL3-8z-hzu">
-                                <rect key="frame" x="112" y="20" width="266" height="17"/>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="kL3-8z-hzu">
+                                <rect key="frame" x="106" y="20" width="268" height="17"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="264" id="IS5-6y-IBg"/>
+                                    <constraint firstAttribute="height" constant="17" id="ceu-pe-grV"/>
+                                </constraints>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" placeholderString="Tell me what's happening now" id="Sbi-cB-bil">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -748,19 +753,24 @@
                             </textField>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="Zs2-zp-2yO" firstAttribute="centerX" secondItem="m2S-Jp-Qdl" secondAttribute="centerX" id="Jqb-Gn-3wO"/>
-                            <constraint firstItem="cGu-La-dgN" firstAttribute="top" secondItem="Zs2-zp-2yO" secondAttribute="bottom" constant="8" id="Wo2-7O-UVC"/>
-                            <constraint firstItem="Zs2-zp-2yO" firstAttribute="top" secondItem="zZW-rp-gHI" secondAttribute="bottom" constant="8" id="h5r-kq-SPX"/>
-                            <constraint firstItem="cGu-La-dgN" firstAttribute="centerX" secondItem="m2S-Jp-Qdl" secondAttribute="centerX" id="pjq-3E-YWf"/>
-                            <constraint firstItem="zZW-rp-gHI" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="20" id="ptM-3w-ny9"/>
-                            <constraint firstItem="zZW-rp-gHI" firstAttribute="centerX" secondItem="m2S-Jp-Qdl" secondAttribute="centerX" id="qHm-JY-KAd"/>
+                            <constraint firstItem="ufr-H1-feE" firstAttribute="top" secondItem="Zs2-zp-2yO" secondAttribute="bottom" constant="8" id="07i-Hk-eD8"/>
+                            <constraint firstItem="ufr-H1-feE" firstAttribute="leading" secondItem="Zs2-zp-2yO" secondAttribute="leading" id="BKa-cq-LJp"/>
+                            <constraint firstItem="Zs2-zp-2yO" firstAttribute="centerX" secondItem="m2S-Jp-Qdl" secondAttribute="centerX" id="Pl3-8X-DPq"/>
+                            <constraint firstItem="zZW-rp-gHI" firstAttribute="centerX" secondItem="m2S-Jp-Qdl" secondAttribute="centerX" id="Q41-MS-kYs"/>
+                            <constraint firstItem="kL3-8z-hzu" firstAttribute="top" secondItem="Q8u-bP-fO6" secondAttribute="bottom" constant="12" id="QCB-Ja-t26"/>
+                            <constraint firstItem="Zs2-zp-2yO" firstAttribute="top" secondItem="cGu-La-dgN" secondAttribute="bottom" constant="8" id="UAV-MO-jRt"/>
+                            <constraint firstItem="zZW-rp-gHI" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="20" id="YzP-sT-jaS"/>
+                            <constraint firstItem="cGu-La-dgN" firstAttribute="centerX" secondItem="m2S-Jp-Qdl" secondAttribute="centerX" id="fIg-vK-kL7"/>
+                            <constraint firstItem="cGu-La-dgN" firstAttribute="top" secondItem="zZW-rp-gHI" secondAttribute="bottom" constant="8" id="pdk-25-jWf"/>
+                            <constraint firstItem="kL3-8z-hzu" firstAttribute="centerX" secondItem="m2S-Jp-Qdl" secondAttribute="centerX" id="tU7-VN-xfy"/>
+                            <constraint firstItem="Q8u-bP-fO6" firstAttribute="trailing" secondItem="Zs2-zp-2yO" secondAttribute="trailing" id="uLu-AW-cCi"/>
+                            <constraint firstItem="Q8u-bP-fO6" firstAttribute="top" secondItem="Zs2-zp-2yO" secondAttribute="bottom" constant="8" id="uaw-eO-iko"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="addFileButton" destination="cGu-La-dgN" id="3s3-Kc-aw1"/>
                         <outlet property="passPhraseTextField" destination="Zs2-zp-2yO" id="pR5-KY-7f0"/>
-                        <outlet property="receiveButton" destination="7M5-jw-Ekd" id="SX5-pk-vWg"/>
-                        <outlet property="sendButton" destination="Q8u-bP-fO6" id="Lks-75-cNA"/>
+                        <outlet property="shareButton" destination="Q8u-bP-fO6" id="re4-0J-9x4"/>
                         <outlet property="statusLabel" destination="kL3-8z-hzu" id="AIS-9B-Ijg"/>
                         <outlet property="stopButton" destination="ufr-H1-feE" id="Wor-0U-Ppe"/>
                     </connections>

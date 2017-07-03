@@ -13,51 +13,55 @@ class MainViewController: NSViewController {
     @IBOutlet weak var passPhraseTextField: NSTextField!
     @IBOutlet weak var addFileButton: NSButton!
     @IBOutlet weak var stopButton: NSButton!
-    @IBOutlet weak var sendButton: NSButton!
-    @IBOutlet weak var receiveButton: NSButton!
+    @IBOutlet weak var shareButton: NSButton!
     @IBOutlet weak var statusLabel: NSTextField!
 
-    var outgoingConnectionManager : OutgoingConnectionManager?
+    var connectionManager : ConnectionManager?
+
+    var filePathURL : NSURL?
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        connectionManager = ConnectionManager()
     }
 
-    override var representedObject: AnyObject? {
-        didSet {
-        // Update the view, if already loaded.
-        }
-    }
-
-    @IBAction func onAddFileButtonClicked(sender: NSButton) {
+    @IBAction func onAddFileButtonClicked(_ sender: NSButton) {
         let panel = NSOpenPanel()
         panel.canChooseDirectories = true
 
-        panel.beginWithCompletionHandler { (result) in
+        panel.begin { (result) in
             if result == NSFileHandlingPanelOKButton {
-                let url = panel.URLs[0]
-                print(url)
+                let url = panel.urls[0]
+                self.filePathURL = url
+                print(self.filePathURL)
             }
         }
+
     }
 
-    @IBAction func onSendButtonClicked(sender: NSButton) {
+    @IBAction func onShareButtonClicked(_ sender: NSButton) {
         guard passPhraseTextField.stringValue != "" else {
             statusLabel.stringValue = "You need a passPhrase to continue"
             return
         }
 
-        outgoingConnectionManager = OutgoingConnectionManager(passPhrase: passPhraseTextField.stringValue)
+        connectionManager?.startServices()
+
+        let location = filePathURL
+        let fileContent = NSData(contentsOf: location! as URL)
+        ConnectionManager.send
     }
 
 
-    @IBAction func onStopButtonClicked(sender: NSButton) {
-        guard (outgoingConnectionManager != nil) else {
+    @IBAction func onStopButtonClicked(_ sender: NSButton) {
+        guard (connectionManager != nil) else {
             return
         }
 
-        outgoingConnectionManager?.stopAdvertising()
+        connectionManager?.stopServices()
+
     }
+
 }
 
