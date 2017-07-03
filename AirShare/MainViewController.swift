@@ -18,41 +18,43 @@ class MainViewController: NSViewController {
 
     var connectionManager : ConnectionManager?
 
+    var filePathURL : NSURL?
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
         connectionManager = ConnectionManager()
     }
 
-    override var representedObject: AnyObject? {
-        didSet {
-        // Update the view, if already loaded.
-        }
-    }
-
-    @IBAction func onAddFileButtonClicked(sender: NSButton) {
+    @IBAction func onAddFileButtonClicked(_ sender: NSButton) {
         let panel = NSOpenPanel()
         panel.canChooseDirectories = true
 
-        panel.beginWithCompletionHandler { (result) in
+        panel.begin { (result) in
             if result == NSFileHandlingPanelOKButton {
-                let url = panel.URLs[0]
-                print(url)
+                let url = panel.urls[0]
+                self.filePathURL = url
+                print(self.filePathURL)
             }
         }
+
     }
 
-    @IBAction func onShareButtonClicked(sender: NSButton) {
+    @IBAction func onShareButtonClicked(_ sender: NSButton) {
         guard passPhraseTextField.stringValue != "" else {
             statusLabel.stringValue = "You need a passPhrase to continue"
             return
         }
 
         connectionManager?.startServices()
+
+        let location = filePathURL
+        let fileContent = NSData(contentsOf: location!)
+        ConnectionManager.send
     }
 
 
-    @IBAction func onStopButtonClicked(sender: NSButton) {
+    @IBAction func onStopButtonClicked(_ sender: NSButton) {
         guard (connectionManager != nil) else {
             return
         }
