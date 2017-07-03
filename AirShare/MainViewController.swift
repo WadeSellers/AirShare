@@ -49,7 +49,7 @@ class MainViewController: NSViewController {
         connectionManager?.startServices()
 
         let location = filePathURL
-        let fileContent = NSData(contentsOf: location!)
+        let fileContent = NSData(contentsOf: location! as URL)
         ConnectionManager.send
     }
 
